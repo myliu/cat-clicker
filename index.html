@@ -2,18 +2,29 @@
 
 <head>
     <script>
-        var counter = 0
+        var counter1 = 0
+        var counter2 = 0
 
         function addOne() {
-            counter = counter + 1;
-            document.getElementById('counter').innerHTML = counter;
+            counter1 = counter1 + 1;
+            document.getElementById('counter1').innerHTML = counter1;
+        }
+
+        function addTwo() {
+            counter2 = counter2 + 1;
+            document.getElementById('counter2').innerHTML = counter2;
         }
     </script>
 </head>
 
 <body>
-    <p id="counter">0</p>
-    <img src="cat.jpg" onclick="addOne()"/>
+    <p>Kitty One</p>
+    <img src="cat1.jpg" onclick="addOne()"/>
+    <p id="counter1">0</p>
+
+    <p>Kitty Two</p>
+    <img src="cat2.jpg" onclick="addTwo()"/>
+    <p id="counter2">0</p>
 </body>
 
 </html>
