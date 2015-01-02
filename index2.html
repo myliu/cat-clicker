@@ -1,0 +1,39 @@
+<html>
+
+<head></head>
+<body></body>
+
+<script>
+    var cat1 = {
+        name: "Kitty One",
+        counter: 0,
+        img: "cat1.jpg"};
+
+    var cat2 = {
+        name: "Kitty Two",
+        counter: 0,
+        img: "cat2.jpg"};
+
+    var cats = [cat1, cat2];
+
+    for (var i = 0; i < cats.length; i++) {
+        var cat = cats[i];
+
+        var counterElem = document.createElement('p');
+        counterElem.id = i;
+        counterElem.innerHTML = cat.counter;
+        document.body.appendChild(counterElem);
+
+        var imgElem = document.createElement('img');
+        imgElem.src = cat.img;
+        imgElem.addEventListener('click', (function(id) {
+            return function() {
+                var copyCat = cats[id];
+                copyCat.counter = copyCat.counter + 1;
+                document.getElementById(id).innerHTML = copyCat.counter;
+            };
+        })(i));
+        document.body.appendChild(imgElem);
+    };
+</script>
+</html>
